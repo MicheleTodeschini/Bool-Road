@@ -192,9 +192,9 @@ export default function TravelDeatils() {
 
     return (
         <>
-            <div key={ }>
-                <Link to={`/PersonDetails/${id}`}  >Clicca qui per andare ai partecipanti</Link>
-            </div>
+            {/*   <div key={ }>    </div > */}
+            <Link to={`/PersonDetails/${id}`}  >Clicca qui per andare ai partecipanti</Link>
+
         </>
     )
 }

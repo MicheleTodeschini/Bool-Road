@@ -198,7 +198,7 @@ export default function HomePage() {
                             <p>{viaggio.destinazione}</p>
                             <p>{viaggio.dataInizio}</p>
                             <p>{viaggio.dataFine}</p>
-                            <Link to={`/TravelDetails/${viaggio.id}`}>clicca qui</Link>
+                            <Link to={`/TravelDetails/${viaggio.id}`}>clicca qui per vedere la lista dei partecipanti</Link>
                         </div>
                     </div>
                 ))
