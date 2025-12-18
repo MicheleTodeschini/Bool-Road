@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import viaggi from "../src/data/viaggi";
 
 export default function TravelDeatils() {
 
-    const paramsId = 1
+    const { id } = useParams()
 
     const filter = viaggi.filter(items => (
-        items.id == paramsId
+        items.id == id
 
 
     ))
@@ -51,7 +51,7 @@ export default function TravelDeatils() {
                                             <td>{viaggiatore.nome}</td>
                                             <td className="d-none d-md-table-cell">{viaggiatore.cognome}</td>
                                             <td className="log">
-                                                <Link to="/PersonDetails/:id">
+                                                <Link to={`/PersonDetails/:${id}`}>
                                                     <button type="button" className="eye btn btn-outline-primary">
                                                         <i className="bi bi-eye-fill"></i>
                                                     </button>

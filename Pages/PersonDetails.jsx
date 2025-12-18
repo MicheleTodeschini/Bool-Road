@@ -15,9 +15,9 @@ export default function PersonDetail() {
         </div>
         <div className="card-bottom">
           <p className="name">Gigi Pipino</p> {/*TENDENZIALMENTE QUESTO DA FARE IN STRONG*/}
+          <p><strong>Codice fiscale:</strong>GGIPPN99K13L205Y</p>
           <p><strong>Email:</strong> gigipipino@gmail.com</p>
-          <p>+39 12346789</p>
-          <p>GGIPPN99K13L205Y</p>
+          <p><strong>Numero di telefono:</strong>+39 12346789</p>
         </div>
       </div>
     </>
