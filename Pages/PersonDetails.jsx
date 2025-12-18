@@ -1,10 +1,25 @@
-import viaggi from "../src/data/viaggi"
+import { Link, useParams } from "react-router-dom"
 import user from "../src/img/user.jpg"
+import viaggi from "../src/data/viaggi"
+import { useState } from "react"
 
 export default function PersonDetail() {
 
+  const paramId = 1
+
+  const filterTrip = viaggi.filter(items => (
+    items.id == paramId
 
 
+
+  ))
+
+  const filterUser = filterTrip[0].viaggiatori.find(items => items.id === paramId)
+
+
+  const traveler = filterUser
+
+  //console.log(filterUser);
 
 
   return (
@@ -14,10 +29,10 @@ export default function PersonDetail() {
           <img src={user}></img> {/*IMMAGE DELLA PERSONA*/}
         </div>
         <div className="card-bottom">
-          <p className="name">Gigi Pipino</p> {/*TENDENZIALMENTE QUESTO DA FARE IN STRONG*/}
-          <p><strong>Codice fiscale:</strong>GGIPPN99K13L205Y</p>
-          <p><strong>Email:</strong> gigipipino@gmail.com</p>
-          <p><strong>Numero di telefono:</strong>+39 12346789</p>
+          <p className="name">{traveler.nome} {traveler.cognome}</p> {/*TENDENZIALMENTE QUESTO DA FARE IN STRONG*/}
+          <p><strong>Codice fiscale:</strong>{traveler.codiceFiscale}</p>
+          <p><strong>Email:</strong> {traveler.email}</p>
+          <p><strong>Numero di telefono:</strong>+39 {traveler.telefono}</p>
         </div>
       </div>
     </>

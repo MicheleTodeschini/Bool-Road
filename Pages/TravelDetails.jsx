@@ -22,8 +22,9 @@ export default function TravelDeatils() {
 
         setTrip([{ ...trip[0], viaggiatori: removeTraveler }]);
     }
-    const [trip, setTrip] = useState(filter)
 
+
+    const [trip, setTrip] = useState(filter)
 
 
 
