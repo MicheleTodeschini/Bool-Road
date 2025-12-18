@@ -1,29 +1,31 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 import user from "../src/img/user.jpg"
 import viaggi from "../src/data/viaggi"
-import { useState } from "react"
 
 export default function PersonDetail() {
 
-  const paramId = 1
+  const id = 1
 
   const filterTrip = viaggi.filter(items => (
-    items.id == paramId
-
-
+    items.id == id
 
   ))
 
-  const filterUser = filterTrip[0].viaggiatori.find(items => items.id === paramId)
+  const filterUser = filterTrip[0].viaggiatori.find(items => items.id === id)
 
+  const navigate = useNavigate()
 
   const traveler = filterUser
-
-  //console.log(filterUser);
 
 
   return (
     <>
+      <Link to={`/TravelDetails/:${id}`}>
+        <button type="button" className="eye btn btn-outline-primary" onClick={() => navigate(-1)}>
+          <i className="bi bi-arrow-left"></i>
+
+        </button>
+      </Link>
       <div className="card" >
         <div className="card-top">
           <img src={user}></img> {/*IMMAGE DELLA PERSONA*/}
